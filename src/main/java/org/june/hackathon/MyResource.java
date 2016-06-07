@@ -43,10 +43,16 @@ public class MyResource {
         return dbInteraction.authenticateUser(userName, password);
     }
 
-    @POST @Path("/register")
+    @POST @Path("/register/newuser")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
     public String registerUser(Users user){
         return dbInteraction.registerUser(user);
+    }
+
+    @GET @Path("/{user_name}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Users getThat(@PathParam("user_name") String userName) {
+        return dbInteraction.fetchUser(userName);
     }
 }

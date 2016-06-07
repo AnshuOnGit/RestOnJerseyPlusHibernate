@@ -28,6 +28,38 @@ public class Users {
     private String telephone;
     @Column(name = "logged_in")
     private Boolean isLoggedIn;
+    @Column(name = "type")
+    private String type;
+    @Column(name = "address")
+    private String address;
+    @Column(name = "vehicle_no")
+    private String vehicleNumber;
+
+    public String getVehicleNumber() {
+        return vehicleNumber;
+    }
+
+    public void setVehicleNumber(String vehicleNumber) {
+        this.vehicleNumber = vehicleNumber;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+
 
     public Integer getUserId() {
         return userId;
